@@ -23,9 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            moveSpeed = 5f * 2;
+            moveSpeed = 5f * 2f;
         }
 
         else
