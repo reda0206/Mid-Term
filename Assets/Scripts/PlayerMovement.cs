@@ -22,7 +22,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = 5f * 2;
+        }
+
+        else
+        {
+            moveSpeed = 5f;
+        }
+
+            float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         if (Input.GetAxis("Jump") > 0 && isGrounded)
