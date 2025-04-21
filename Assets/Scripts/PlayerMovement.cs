@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     private Rigidbody2D rb;
 
+    int health = 3;
+
 
     private void Start()
     {
@@ -57,4 +59,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    public void TakeDamage();
 }
