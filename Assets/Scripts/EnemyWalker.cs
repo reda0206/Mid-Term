@@ -33,4 +33,12 @@ public class EnemyWalker : MonoBehaviour
 
         moveSpeed *= -1;
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(1);
+        }
+    }
 }

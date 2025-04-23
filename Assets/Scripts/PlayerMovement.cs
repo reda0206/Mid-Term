@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 10f;
     public bool isGrounded;
     private Rigidbody2D rb;
-
-    int health = 3;
+    public int health = 3;
+    public float damageCooldown = 1.5f;
+    private float lastDamageTime = -Mathf.Infinity;
 
 
     private void Start()
@@ -60,5 +61,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void TakeDamage();
+    public void TakeDamage(int damageValue)
+    {
+        if (Time.time - damageCooldown >= lastDamageTime)
+        {
+            lastDamageTime = Time.time;
+
+            health -= damageValue;
+            Debug.Log("Health = " + health);
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("You Died!");
+            }
+        }
+    }
+
+    public void Bounce()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 5f);
+    }
 }
