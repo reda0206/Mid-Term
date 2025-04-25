@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public int health = 3;
     public float damageCooldown = 1.5f;
     private float lastDamageTime = -Mathf.Infinity;
+    public TextMeshProUGUI healthText;
 
 
     private void Start()
@@ -21,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("Player RB not found");
         }
+
+        healthText.text = "Health = " + health;
     }
 
     private void FixedUpdate()
@@ -68,11 +73,13 @@ public class PlayerMovement : MonoBehaviour
             lastDamageTime = Time.time;
 
             health -= damageValue;
+            healthText.text = "Health = " + health;
             Debug.Log("Health = " + health);
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene("GameOverScene");
+               // Destroy(gameObject);
                 Debug.Log("You Died!");
             }
         }
