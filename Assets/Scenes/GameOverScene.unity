@@ -422,7 +422,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1763355672}
         m_TargetAssemblyTypeName: ButtonsGameOver, Assembly-CSharp
-        m_MethodName: QuitButton
+        m_MethodName: QuitToMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
