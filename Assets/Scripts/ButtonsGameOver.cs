@@ -10,8 +10,8 @@ public class ButtonsGameOver : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    public void QuitButton()
+    public void QuitToMenuButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
