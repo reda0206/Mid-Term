@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ffe575c2cc8c149abdf4dcf4210d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfParallax: 0
+  AmountOfParallax: 0.8
   MainCamera: {fileID: 519420031}
 --- !u!1 &400438291
 GameObject:
@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ffe575c2cc8c149abdf4dcf4210d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfParallax: 0
+  AmountOfParallax: 0.5
   MainCamera: {fileID: 519420031}
 --- !u!1001 &733292932
 PrefabInstance:
@@ -6769,7 +6769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ffe575c2cc8c149abdf4dcf4210d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfParallax: 0
+  AmountOfParallax: 0.5
   MainCamera: {fileID: 519420031}
 --- !u!1001 &1706339223
 PrefabInstance:
@@ -7141,7 +7141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ffe575c2cc8c149abdf4dcf4210d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfParallax: 0
+  AmountOfParallax: 0.3
   MainCamera: {fileID: 519420031}
 --- !u!1001 &1808476696
 PrefabInstance:
@@ -8005,7 +8005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8593849583146760115, guid: 80184a3e0f8cc094698371f9e6c48db8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8593849583146760115, guid: 80184a3e0f8cc094698371f9e6c48db8, type: 3}
       propertyPath: m_LocalRotation.w
