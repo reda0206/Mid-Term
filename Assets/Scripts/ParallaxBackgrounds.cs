@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class ParallaxBackgrounds : MonoBehaviour
 {
-    private float startingPos;
+    private float startingPosX;
+    private float startingPosY;
     private float lengthOfSprite;
     public float AmountOfParallax;
     public Camera MainCamera;
     
     void Start()
     {
-        startingPos = transform.position.x;
+        startingPosX = transform.position.x;
+        startingPosY = transform.position.y;
         lengthOfSprite = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     
     void Update()
     {
-        Vector3 Position = MainCamera.transform.position;
-        float Temp = Position.x * (1 - AmountOfParallax);
-        float distance = Position.x * AmountOfParallax;
+        Vector3 cameraPosition = MainCamera.transform.position;
+        float TempX = cameraPosition.x * (1 - AmountOfParallax);
+        float distanceX = cameraPosition.x * AmountOfParallax;
 
-        Vector3 newPosition = new Vector3(startingPos + distance, transform.position.y, transform.position.z);
+        float tempY = cameraPosition.y * (1 - AmountOfParallax);
+        float distanceY = cameraPosition.y * AmountOfParallax;
+
+        Vector3 newPosition = new Vector3(startingPosX + distanceX, startingPosY + distanceY, transform.position.y, transform.position.z);
 
         transform.position = newPosition;
     }

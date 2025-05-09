@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float damageCooldown = 1.5f;
     private float lastDamageTime = -Mathf.Infinity;
     public TextMeshProUGUI healthText;
+    public AudioClip jumpSound;
 
 
     private void Start()
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxis("Jump") > 0 && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position, 1f);
         }
     }
 
