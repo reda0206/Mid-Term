@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         if (coinsObtained == 3)
         {
             Debug.Log("You have obtained all coins!");
+            SceneManager.LoadScene("WinScene");
         }
     }
 }
