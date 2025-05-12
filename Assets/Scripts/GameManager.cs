@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int coinsObtained = 0;
     public TextMeshProUGUI coinsText;
+    public GameObject pauseMenuUi;
+    public bool isPaused = false;
     private void Awake()
     {
        if (Instance == null)
@@ -30,7 +32,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            if (!isPaused)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
     
@@ -45,5 +54,19 @@ public class GameManager : MonoBehaviour
             Debug.Log("You have obtained all coins!");
             SceneManager.LoadScene("WinScene");
         }
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+        pauseMenuUi.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+        pauseMenuUi.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

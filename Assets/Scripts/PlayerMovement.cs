@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
+        if(GameManager.Instance.isPaused)
+        {
+            return;
+        }
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = 5f * 2f;
