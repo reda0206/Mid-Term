@@ -25,5 +25,14 @@ public class ParallaxBackgrounds : MonoBehaviour
         Vector3 newPosition = new Vector3(startingPos + distance, transform.position.y, transform.position.z);
 
         transform.position = newPosition;
+
+        if (Temp > startingPos + (lengthOfSprite / 2))
+        {
+            startingPos += lengthOfSprite;
+        }
+        else if (Temp < startingPos - (lengthOfSprite / 2))
+        {
+            startingPos -= lengthOfSprite;
+        }
     }
 }

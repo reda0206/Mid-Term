@@ -34,11 +34,11 @@ public class GameManager : MonoBehaviour
         {
             if (!isPaused)
             {
-
+                Pause();
             }
             else
             {
-
+                Resume();
             }
         }
     }
@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         pauseMenuUi.SetActive(false);
+        ResumeAudio();
         Time.timeScale = 1f;
     }
 
@@ -67,6 +68,30 @@ public class GameManager : MonoBehaviour
     {
         isPaused = true;
         pauseMenuUi.SetActive(true);
+        PauseAudio();
         Time.timeScale = 0f;
+    }
+
+    public void BackToMenuButton()
+    {
+    SceneManager.LoadScene("MainMenuScene");
+        Time.timeScale = 1f;
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
+    public void PauseAudio()
+    {
+        // AudioListener.pause = true;
+
+        foreach (AudioSource audio in FindObjectsOfType<AudioSource>()) ;
+    }
+
+    public void ResumeAudio()
+    { 
+       // AudioListener.pause = false;
     }
 }
