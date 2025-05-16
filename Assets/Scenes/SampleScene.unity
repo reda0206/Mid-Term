@@ -2017,6 +2017,8 @@ MonoBehaviour:
   coinsText: {fileID: 1892008838}
   pauseMenuUi: {fileID: 1713263736}
   isPaused: 0
+  excludedAudioSources:
+  - {fileID: 519420034}
 --- !u!4 &466265360
 Transform:
   m_ObjectHideFlags: 0

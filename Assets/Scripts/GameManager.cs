@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI coinsText;
     public GameObject pauseMenuUi;
     public bool isPaused = false;
+    private List<AudioSource> audioSources = new List<AudioSource>();
+    public List<AudioSource> excludedAudioSources = new List<AudioSource>();
     private void Awake()
     {
        if (Instance == null)
@@ -87,11 +89,26 @@ public class GameManager : MonoBehaviour
     {
         // AudioListener.pause = true;
 
-        foreach (AudioSource audio in FindObjectsOfType<AudioSource>()) ;
+        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
+        {
+            if (audio.isPlaying && !excludedAudioSources.Contains(audio))
+            {
+                audio.Pause();
+                audioSources.Add(audio);
+            }
+        }
     }
 
     public void ResumeAudio()
-    { 
-       // AudioListener.pause = false;
+    {
+        // AudioListener.pause = false;
+        for(int i = audioSources.Count -1; i >= 0; i--)
+        {
+           if (audioSources[i])
+            {
+                audioSources[i].UnPause();
+                audioSources.RemoveAt(i);
+            }
+        }
     }
 }
